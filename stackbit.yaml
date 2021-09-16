@@ -1,0 +1,103 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  font:
+    type: page
+    label: Font
+    folder: assets/font
+    match: '*'
+    fields: []
+  post:
+    type: page
+    label: Post
+    folder: example/_posts
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: tag
+        label: Tag
+      - type: string
+        name: tags
+        label: Tags
+      - type: image
+        name: cover_url
+        label: Cover Url
+  example:
+    type: page
+    label: Example
+    folder: example
+    match: '*'
+    exclude:
+      - index.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: lang
+        label: Lang
+      - type: image
+        name: cover_url
+        label: Cover Url
+      - type: string
+        name: cover_meta
+        label: Cover Meta
+      - type: boolean
+        name: navbar
+        label: Navbar
+      - type: number
+        name: position
+        label: Position
+        subtype: int
+      - type: string
+        name: navbar_title
+        label: Navbar Title
+  example_1:
+    type: page
+    label: Example 1
+    folder: example
+    match:
+      - index.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+  tag:
+    type: page
+    label: Tag
+    folder: example/tags
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: layout
+        label: Layout
+      - type: list
+        name: filter
+        label: Filter
+        items:
+          type: object
+          fields:
+            - type: string
+              name: by_tag
+              label: By Tag
